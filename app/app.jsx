@@ -1,9 +1,10 @@
 var React = require('react'),
     ReactDOM = require('react-dom'),
-    { Route, Router, IndexRoute, hashHistory } = require('react-router'),
+    { Route, Router, IndexRoute, browserHistory } = require('react-router'),
 
     Main = require('Main'),
-    About = require('Timer');
+    StopWatch = require('StopWatch'),
+    Timer = require('Timer');
 
 
 require('style!css!foundation-sites/dist/foundation.min.css')
@@ -13,9 +14,10 @@ $(document).foundation();
 require('style!css!sass!styles')
 
 ReactDOM.render(
-  <Router history={hashHistory}>
+  <Router history={browserHistory}>
     <Route path="/" component={Main}>
-      {/* <Route path="about" component={About} /> */}
+      <Route path="timer" component={Timer} />
+      <IndexRoute component={StopWatch} />
     </Route>
   </Router>,
   document.getElementById('app')

@@ -22,6 +22,7 @@
 
   .menu-text {
     a {
+      // border-bottom: .2rem solid lighten($top-bar-color, 40%);
       display: inline;
       padding: 0;
     }
@@ -29,9 +30,8 @@
 }
 
 .active-link {
-  a {
-    border-bottom: .2rem solid $top-bar-text;
-  }
+  border-bottom: .2rem solid $link-underline;
+  font-weight: bold;;
 }
 
 .top-bar-right {

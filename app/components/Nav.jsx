@@ -16,12 +16,14 @@ var Nav = React.createClass({
                 <li>
                   <IndexLink to="/"
                     activeClassName="active-link"
-                    activeStyle={{fontWeight: 'bold'}}>Stop Watch</IndexLink>
+                    // activeStyle={{fontWeight: 'bold'}}
+                    >Stop Watch</IndexLink>
                 </li>
                 <li>
                   <Link to="/timer"
                     activeClassName="active-link"
-                    activeStyle={{fontWeight: 'bold'}}>Timer</Link>
+                    // activeStyle={{fontWeight: 'bold'}}
+                    >Timer</Link>
                 </li>
               </ul>
             </div>

@@ -22,14 +22,16 @@ module.exports = {
   resolve: {
     root: __dirname,
     alias: {
-      // --------Main App Components--------//
+      // -------- Main App Components --------//
       Nav: 'app/components/Nav.jsx',
       Main: 'app/components/Main.jsx',
       styles: 'app/styles/style.scss',
 
-      // --------About Components--------//
-      Timer: 'app/components/Timer.jsx',
+      // -------- StopWatch Components --------//
+      StopWatch: 'app/components/StopWatch.jsx',
 
+      // -------- Timer Components --------//
+      Timer: 'app/components/Timer.jsx'
     },
     extensions: ['', '.js', '.jsx']
   },
