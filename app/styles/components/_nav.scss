@@ -30,6 +30,10 @@
 
 .active-link {
   a {
-    border-bottom: .2rem solid white;
+    border-bottom: .2rem solid $top-bar-text;
   }
+}
+
+.top-bar-right {
+  padding: .2rem 0 0;
 }
