@@ -1,13 +1,14 @@
 var React = require('react'),
+    Clock = require('Clock'),
 
-    Timer = (props) => {
-      return(
-        <div className="text-center">
-          <h1 className="page-title">Timer</h1>
-          <p>Built with <a href="https://github.com/MiguelDotL" target="_blank">&hearts;</a> by <a href="https://github.com/MiguelDotL" target="_blank">MiguelDotL</a></p>
-          <p>This application was build using the OpenWeather API, NodeJS, ReactJS, Webpack, Foundation </p>
-        </div>
-      );
-    };
+    Timer = React.createClass({
+      render: function() {
+        return(
+          <div>
+            <Clock totalSeconds={129}/>
+          </div>
+        );
+      }
+    });
 
 module.exports = Timer;

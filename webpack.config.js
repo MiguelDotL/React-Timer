@@ -26,6 +26,7 @@ module.exports = {
       Nav: 'app/components/Nav.jsx',
       Main: 'app/components/Main.jsx',
       styles: 'app/styles/style.scss',
+      jQuery: 'node_modules/jquery/dist/jquery.min.js',
 
       Clock: 'app/components/Clock.jsx',
 
