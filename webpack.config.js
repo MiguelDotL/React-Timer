@@ -35,7 +35,8 @@ module.exports = {
 
       // -------- Timer Components --------//
       Timer: 'app/components/Timer.jsx',
-      TimerForm: 'app/components/Timer/TimerForm.jsx'
+      TimerForm: 'app/components/Timer/TimerForm.jsx',
+      Controls: 'app/components/Controls.jsx',
     },
     extensions: ['', '.js', '.jsx']
   },
