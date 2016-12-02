@@ -27,6 +27,8 @@ module.exports = {
       Main: 'app/components/Main.jsx',
       styles: 'app/styles/style.scss',
 
+      Clock: 'app/components/Clock.jsx',
+
       // -------- StopWatch Components --------//
       StopWatch: 'app/components/StopWatch.jsx',
 
