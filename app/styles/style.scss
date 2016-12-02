@@ -1,0 +1,19 @@
+@import 'base/variables';
+@import 'components/nav';
+
+
+// ---------------- Main Styles ----------------
+
+
+// ---------------- Foundation Overrides ----------------
+
+
+// ---------------- Nav.jsx ----------------
+.top-bar {
+  background: $top-bar-color;
+
+  ul {
+    background: none;
+    color: $top-bar-text;
+  }
+}
