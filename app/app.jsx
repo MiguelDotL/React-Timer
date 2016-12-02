@@ -1,6 +1,10 @@
 var React = require('react'),
     ReactDOM = require('react-dom'),
-    { Route, Router, IndexRoute, browserHistory } = require('react-router'),
+    { Route,
+      Router,
+      IndexRoute,
+      hashHistory,
+      browserHistory } = require('react-router'),
 
     Main = require('Main'),
     StopWatch = require('StopWatch'),
@@ -14,7 +18,8 @@ $(document).foundation();
 require('style!css!sass!styles')
 
 ReactDOM.render(
-  <Router history={browserHistory}>
+  // <Router history={browserHistory}>
+  <Router history={hashHistory}>
     <Route path="/" component={Main}>
       <Route path="timer" component={Timer} />
       <IndexRoute component={StopWatch} />
