@@ -1,6 +1,7 @@
 var React = require('react'),
     Clock = require('Clock'),
     TimerForm = require('TimerForm'),
+    Controls = require('Controls'),
 
     Timer = React.createClass({
 
@@ -17,10 +18,15 @@ var React = require('react'),
             case 'started':
               this.startTimer();
               break;
+            case 'stopped':
+              this.setState({count: 0});
+            case 'paused':
+              clearInterval(this.timer);
+              this.timer = undefined;
+              break;
             default:
           }
         }
-
       },
 
       startTimer: function() {
@@ -39,14 +45,25 @@ var React = require('react'),
         });
       },
 
-      render: function() {
+      handleStatusChange: function(newStatus) {
+        this.setState({timerStatus: newStatus})
+      },
 
-        let {count} = this.state
+      render: function() {
+        let { count,
+              timerStatus } = this.state
+        let renderControlArea = () => {
+          if(timerStatus != 'stopped') {
+            return <Controls timerStatus={timerStatus} onStatusChange={this.handleStatusChange} />
+          } else {
+            return <TimerForm onSetTimer={this.handleSetTimer} />
+          }
+        };
 
         return(
           <div>
             <Clock totalSeconds={count}/>
-            <TimerForm onSetTimer={this.handleSetTimer}/>
+            {renderControlArea()}
           </div>
         );
       }

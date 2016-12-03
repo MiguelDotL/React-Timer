@@ -1,0 +1,29 @@
+// ---------------- Foundation Overrides ----------------
+
+
+// ---------------- TimerForm.jsx ----------------
+.timer-form {
+  .button {
+    outline: none;
+  }
+
+  input[type='text'] {
+    outline: none;
+  }
+}
+
+
+// ---------------- Controls.jsx ----------------
+.controls {
+  display: flex;
+  justify-content: center;
+
+  .button {
+    outline: none;
+    padding: .8rem 3rem;
+
+    &:first-child {
+      margin-right: 1.5rem;
+    }
+  }
+}
