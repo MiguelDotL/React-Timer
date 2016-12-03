@@ -11,16 +11,6 @@ describe('Timer', () => {
     expect(Timer).toExist();
   });
 
-  // describe('render', () => {
-  //   it('should render clock to DOM', () => {
-  //     var clock = TestUtils.renderIntoDocument(<Timer totalSeconds={64}/>);
-  //     var $el = $(ReactDOM.findDOMNode(clock));
-  //     var actualText = $el.find('.clock-text').text();
-  //
-  //     expect(actualText).toBe('01:04');
-  //   });
-  // });
-  //
 
   describe('handleSetTimer', () => {
     it('should setState to \'started\' and countdown', (done) => {
@@ -52,5 +42,35 @@ describe('Timer', () => {
         done();
       }, 3001);
     });
+
+    it('should pause Timer countdown on \'paused\' status', (done) => {
+      var timer = TestUtils.renderIntoDocument(<Timer/>);
+      var seconds = 3;
+
+      timer.handleSetTimer(seconds);
+      timer.handleStatusChange('paused');
+
+      setTimeout(() => {
+        expect(timer.state.count).toBe(seconds);
+        expect(timer.state.timerStatus).toBe('paused');
+        done();
+      }, 1001);
+    });
+
+    it('should reset Timer countdown on \'stopped\' status', (done) => {
+      var timer = TestUtils.renderIntoDocument(<Timer/>);
+      var seconds = 3;
+
+      timer.handleSetTimer(seconds);
+      timer.handleStatusChange('stopped');
+
+      setTimeout(() => {
+        expect(timer.state.count).toBe(0);
+        expect(timer.state.timerStatus).toBe('stopped');
+        done();
+      }, 1001);
+    });
+
+
   });
 });

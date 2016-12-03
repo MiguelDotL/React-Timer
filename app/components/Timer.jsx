@@ -71,6 +71,7 @@ var React = require('react'),
 
         return(
           <div>
+            <h1 className="page-title">Set A Time</h1>
             <Clock totalSeconds={count}/>
             {renderControlArea()}
           </div>
