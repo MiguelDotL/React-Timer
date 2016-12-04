@@ -20,13 +20,13 @@ var React = require('react'),
             renderStartStopButton = () => {
               if(timerStatus == 'started') {
                 return(
-                  <button className="button alert" onClick={this.onStatusChange('paused')}>
+                  <button className="button alert hollow" onClick={this.onStatusChange('paused')}>
                     Stop
                   </button>
                 )
-              } else if( timerStatus == 'paused') {
+              } else {
                 return(
-                  <button className="button success" onClick={this.onStatusChange('started')}>
+                  <button className="button primary" onClick={this.onStatusChange('started')}>
                     Start
                   </button>
                 )
