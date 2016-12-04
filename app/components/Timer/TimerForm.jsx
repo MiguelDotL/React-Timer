@@ -6,22 +6,25 @@ var React = require('react'),
         e.preventDefault();
 
         // get minutes and seconds input values
-        var strMinutes = this.refs.minutes.value;
-        var strSeconds = this.refs.seconds.value;
+        var strMinutes = this.refs.minutes.value || '0';
+        var strSeconds = this.refs.seconds.value || '0';
 
-        if(strMinutes.match(/^[0-9]*$/)) {
-          this.refs.minutes.value = '';
-          var minutes = parseInt(strMinutes, 10);
-          var minInSeconds = minutes * 60;
-        }
+        if (parseInt(strMinutes) || parseInt(strSeconds)) {
 
-        if(strSeconds.match(/^[0-9]*$/)) {
-          this.refs.seconds.value = '';
-          // parse strSeconds to base 10 ints
-          var seconds = parseInt(strSeconds, 10);
-          var totalSeconds = minInSeconds + seconds
+          if(strMinutes.match(/^[0-9]*$/)) {
+            this.refs.minutes.value = '';
+            var minutes = parseInt(strMinutes, 10);
+            var minInSeconds = minutes * 60;
+          }
 
-          this.props.onSetTimer(totalSeconds);
+          if(strSeconds.match(/^[0-9]*$/)) {
+            this.refs.seconds.value = '';
+            // parse strSeconds to base 10 ints
+            var seconds = parseInt(strSeconds, 10) || 0;
+            var totalSeconds = minInSeconds + seconds
+
+            this.props.onSetTimer(totalSeconds);
+          }
         }
       },
 
