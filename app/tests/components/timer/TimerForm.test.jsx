@@ -33,5 +33,29 @@ describe('TimerForm', () => {
     expect(spy).toNotHaveBeenCalled();
   });
 
+  it('should call onSetTimer if NO seconds are entered', () => {
+    let spy = expect.createSpy();
+    let timerForm = TestUtils.renderIntoDocument(<TimerForm onSetTimer={spy}/>);
+    let $el = $(ReactDOM.findDOMNode(timerForm));
+
+    timerForm.refs.minutes.value = '1';
+    timerForm.refs.seconds.value = '';
+    TestUtils.Simulate.submit($el.find('form')[0]);
+
+    expect(spy).toHaveBeenCalledWith(60);
+  });
+
+  it('should call onSetTimer if NO minutes are entered', () => {
+    let spy = expect.createSpy();
+    let timerForm = TestUtils.renderIntoDocument(<TimerForm onSetTimer={spy}/>);
+    let $el = $(ReactDOM.findDOMNode(timerForm));
+
+    timerForm.refs.minutes.value = '';
+    timerForm.refs.seconds.value = '60';
+    TestUtils.Simulate.submit($el.find('form')[0]);
+
+    expect(spy).toHaveBeenCalledWith(60);
+  });
+
 
 });
