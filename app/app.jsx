@@ -11,7 +11,6 @@ var React = require('react'),
     Timer = require('Timer');
 
 
-require('style!css!foundation-sites/dist/foundation.min.css')
 $(document).foundation();
 
 // require('style!css!../app/styles/style.css')
