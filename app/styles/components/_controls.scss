@@ -8,7 +8,13 @@
   }
 
   input[type='text'] {
+    display: inline;
     outline: none;
+    width: 47.5%;
+
+    &:first-child {
+      margin-right: 5%;
+    }
   }
 }
 

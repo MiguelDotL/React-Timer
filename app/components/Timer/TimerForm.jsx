@@ -4,14 +4,13 @@ var React = require('react'),
 
       onSubmit: function(e) {
         e.preventDefault();
-        var strSeconds = this.refs.seconds.value;
-        var strMinutes = this.refs.minutes.value;
 
-        // debugger;
+        // get minutes and seconds input values
+        var strMinutes = this.refs.minutes.value;
+        var strSeconds = this.refs.seconds.value;
+
         if(strMinutes.match(/^[0-9]*$/)) {
           this.refs.minutes.value = '';
-          // parse strSeconds to base 10 ints
-          // var minutes = this.props.onSetTimer(parseInt(strMinutes, 10));
           var minutes = parseInt(strMinutes, 10);
           var minInSeconds = minutes * 60;
         }
@@ -30,8 +29,15 @@ var React = require('react'),
         return(
           <div>
             <form ref="form" onSubmit={this.onSubmit} className="timer-form">
-              <input type="text" ref="minutes" placeholder="Minutes"/>
-              <input type="text" ref="seconds" placeholder="Seconds"/>
+
+
+              <div className="row">
+                <div className="columns centered">
+                  <input type="text" ref="minutes" placeholder="Minutes"/>
+                  <input type="text" ref="seconds" placeholder="Seconds"/>
+                </div>
+              </div>
+
               <button className="button expanded">Start</button>
             </form>
           </div>
